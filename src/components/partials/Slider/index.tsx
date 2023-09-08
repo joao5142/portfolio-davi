@@ -11,8 +11,6 @@ import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { useState } from "react";
 
-import Skeleton from "react-loading-skeleton";
-
 interface ISlide {
   name: string;
   description: string;
