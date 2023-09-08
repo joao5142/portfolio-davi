@@ -11,6 +11,8 @@ import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { useState } from "react";
 
+import Skeleton from "react-loading-skeleton";
+
 interface ISlide {
   name: string;
   description: string;
@@ -27,7 +29,7 @@ interface SliderProps {
 
 export function Slider({ slide }: SliderProps) {
   const [selectedSlide, setSelectedSlide] = useState(0);
-
+  const [isLoading, setIsLoading] = useState(false);
   function handleGoNextSlide() {
     if (selectedSlide >= slide.images.length - 1) {
       setSelectedSlide(0);
@@ -103,6 +105,11 @@ export function Slider({ slide }: SliderProps) {
             width={slide.imageWidth}
             height={slide.imageHeight}
             src={imageUrl}
+            quality={100}
+            onLoad={() => setIsLoading(true)}
+            onLoadingComplete={() => setIsLoading(false)}
+            onError={() => setIsLoading(false)}
+            priority
             alt=""
           />
         ))}
