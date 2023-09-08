@@ -12,7 +12,7 @@ export function Skill({ skill }: SkillProps) {
     <SkillContainer>
       <div>
         <SkillProgress>
-          <SkillProgressInner></SkillProgressInner>
+          <SkillProgressInner progress={skill.percentage}></SkillProgressInner>
         </SkillProgress>
         <Text tag="span" color="blue-500">
           {skill.percentage}%

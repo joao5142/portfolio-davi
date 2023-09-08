@@ -16,11 +16,14 @@ export const SkillProgress = styled.div`
   height: 0.5rem;
   background: ${(props) => props.theme.colors["blue-200"]};
 `;
-export const SkillProgressInner = styled.div`
+interface SkillProgressInnerProps {
+  progress: number;
+}
+export const SkillProgressInner = styled.div<SkillProgressInnerProps>`
   border-radius: 1.25rem;
   height: 0.5rem;
 
-  width: 70%;
+  width: ${(props) => props.progress}%;
   background: linear-gradient(
     90deg,
     ${(props) => props.theme.colors["blue-400"]} 0%,
