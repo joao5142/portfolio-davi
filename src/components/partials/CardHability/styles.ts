@@ -1,0 +1,18 @@
+import styled from "styled-components";
+
+export const CardHabilityContainer = styled.div`
+  background: ${(props) => props.theme.colors.white};
+
+  border-left: 5px solid ${(props) => props.theme.colors["blue-500"]};
+
+  box-shadow: 3px 20px 20px 0px rgba(0, 0, 0, 0.03);
+  border-radius: 0rem 1rem 1rem 0rem;
+
+  padding: 2.8rem 1rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+`;
