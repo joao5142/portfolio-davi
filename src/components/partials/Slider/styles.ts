@@ -60,4 +60,8 @@ export const SliderImages = styled.div<IColor>`
   justify-content: center;
 
   gap: 3.5rem;
+
+  & > * {
+    transition: 0.5s;
+  }
 `;
