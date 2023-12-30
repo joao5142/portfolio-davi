@@ -11,11 +11,11 @@ import {
 import { List } from "phosphor-react";
 import { useRef, useState } from "react";
 export function Header() {
-  const navRef = useRef();
+  const navRef = useRef<HTMLUListElement>(null);
 
   function handleToggleeNavMenu() {
     if (navRef.current) {
-      navRef?.current.classList.toggle("show");
+      navRef.current.classList.toggle("show");
     }
   }
 

@@ -1,6 +1,7 @@
 import { Text } from "@/components/ui/Text";
 import {
   SliderBagde,
+  SliderButtonEmphasis,
   SliderContainer,
   SliderImages,
   SliderInfo,
@@ -11,8 +12,9 @@ import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { useState } from "react";
 import { ColorType } from "@/styles/theme";
+import { Fire } from "phosphor-react";
 
-interface ISlide {
+export interface ISlide {
   name: string;
   description: string;
   primaryColor: string;
@@ -46,6 +48,14 @@ export function Slider({ slide }: SliderProps) {
     <SliderContainer>
       <SliderInfo color={slide.primaryColor}>
         <div>
+          {slide.emphasis && (
+            <SliderButtonEmphasis>
+              <Text color="yellow-400" weight="700" size="sm" tag="strong">
+                Case destaque
+              </Text>
+              <Fire size={28} color="#ED8936" />
+            </SliderButtonEmphasis>
+          )}
           <Box marginBottom={40}>
             <Text
               tag="strong"

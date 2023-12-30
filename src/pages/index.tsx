@@ -22,7 +22,7 @@ import {
 
 import Image from "next/image";
 import { Button } from "../components/ui/Button/index";
-import { Slider } from "@/components/partials/Slider";
+import { ISlide, Slider } from "@/components/partials/Slider";
 import { CardHability } from "@/components/partials/CardHability";
 import { Skill } from "@/components/partials/Skill";
 import {
@@ -254,7 +254,7 @@ export default function Home() {
               </Text>
             </Box>
             {slides.map((slide, index) => (
-              <Slider key={"slide-" + index} slide={slide} />
+              <Slider key={"slide-" + index} slide={slide as ISlide} />
             ))}
           </SectionProjects>
 

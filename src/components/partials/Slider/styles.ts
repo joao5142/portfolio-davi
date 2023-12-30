@@ -91,3 +91,16 @@ export const SliderImages = styled.div<IColor>`
     height: auto;
   }
 `;
+
+export const SliderButtonEmphasis = styled.button`
+  border-radius: 0.75rem;
+  border: 1px solid rgba(239, 151, 77, 0.3);
+
+  background: #fffaf0;
+  padding: 0.625rem 1.25rem;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 2rem;
+`;
