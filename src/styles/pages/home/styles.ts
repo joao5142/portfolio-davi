@@ -156,6 +156,10 @@ export const FooterContainer = styled.div`
   margin-top: 100px;
 
   border-radius: 0px;
+
+  @media (max-width: 600px) {
+    background-size: cover;
+  }
 `;
 
 export const FooterSocials = styled.div`
