@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 import { ButtonContainer } from "./styles";
 import { ButtonHTMLAttributes } from "react";
 
-export type ButtonVariantTypes = "primary" | "secondary";
+export type ButtonVariantTypes = "primary" | "secondary" | "tertiary";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;

@@ -12,8 +12,10 @@ export const SkillContainer = styled.div`
 
 export const SkillProgress = styled.div`
   border-radius: 1.25rem;
+  max-width: 150px;
   width: 100%;
   height: 0.5rem;
+  margin-bottom: 0.6rem;
   background: ${(props) => props.theme.colors["blue-200"]};
 `;
 interface SkillProgressInnerProps {

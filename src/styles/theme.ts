@@ -10,6 +10,10 @@ export const defaultTheme = {
     white: "#ffff",
 
     gray: "#40404b",
+
+    "gray-200": "#718096",
+
+    black: "#171923",
   },
   fontSizes: {
     sm: "1rem",

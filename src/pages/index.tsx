@@ -13,6 +13,8 @@ import {
   SectionHeroTitle,
   SectionHeroTitleName,
   SectionHeroTitleRole,
+  SectionMoments,
+  SectionMomentsContainer,
   SectionProjects,
   SectionSkills,
   SectionSkillsContainer,
@@ -23,8 +25,37 @@ import { Button } from "../components/ui/Button/index";
 import { Slider } from "@/components/partials/Slider";
 import { CardHability } from "@/components/partials/CardHability";
 import { Skill } from "@/components/partials/Skill";
+import {
+  Books,
+  Brain,
+  ChatCircleDots,
+  DiamondsFour,
+  FileText,
+  Palette,
+  TextAa,
+  User,
+} from "phosphor-react";
 
 const slides = [
+  {
+    name: "Revisa Enem Aluno",
+    description: "+250 mil usuários ativos, Destaque no mercado.",
+    primaryColor: "#F2F5FC",
+    secondaryColor: "#CED4F2",
+    titleColor: "black",
+    textColor: "gray-200",
+    bagedBgActive: "blue-700",
+    bagedBg: "#ccd4fb",
+    imageWidth: 680,
+    imageHeight: 450,
+    images: [
+      ["/assets/images/projects/revisa-aluno/1.png"],
+      ["/assets/images/projects/revisa-aluno/2.png"],
+      ["/assets/images/projects/revisa-aluno/3.png"],
+    ],
+    emphasis: true,
+  },
+  ,
   {
     name: "Nosso Bairro",
     description: "O seu bairro conectado. Tudo na palma da sua mão.",
@@ -144,52 +175,44 @@ const habilities = [
 
 const skills = [
   {
-    title: "Product Design",
+    icon: <Books size={32} color="#92c1ff" />,
+    title: "UX Research",
     percentage: 95,
   },
   {
+    icon: <Palette size={32} color="#92c1ff" />,
     title: "Ui Design",
     percentage: 90,
   },
   {
-    title: "Web Design",
-    percentage: 90,
-  },
-  {
-    title: "Design System",
-    percentage: 80,
-  },
-  {
-    title: "Prototyping",
-    percentage: 90,
-  },
-  {
-    title: "Mobile Design",
-    percentage: 90,
-  },
-  {
-    title: "UX Design",
-    percentage: 90,
-  },
-  {
-    title: "UX Writer",
-    percentage: 75,
-  },
-  {
-    title: "Design Strategy",
-    percentage: 90,
-  },
-  {
+    icon: <Brain size={32} color="#92c1ff" />,
     title: "Design Thinking",
-    percentage: 70,
+    percentage: 90,
   },
   {
-    title: "User Research",
+    icon: <FileText size={32} color="#92c1ff" />,
+    title: "Documentação e Facilitação",
     percentage: 80,
   },
   {
-    title: "Front-end",
-    percentage: 10,
+    icon: <DiamondsFour size={32} color="#92c1ff" />,
+    title: "Design System",
+    percentage: 90,
+  },
+  {
+    icon: <TextAa size={32} color="#92c1ff" />,
+    title: "Ux Writer",
+    percentage: 90,
+  },
+  {
+    icon: <User size={32} color="#92c1ff" />,
+    title: "Testes de usabilidade",
+    percentage: 90,
+  },
+  {
+    icon: <ChatCircleDots size={32} color="#92c1ff" />,
+    title: "Contato com Stakeholders",
+    percentage: 75,
   },
 ];
 
@@ -251,7 +274,7 @@ export default function Home() {
           <SectionSkills id="skills">
             <Box marginTop={100} marginBottom={80}>
               <Text tag="h3" color="blue-900" size="lg" weight="700">
-                Diferenciais
+                Skills
               </Text>
             </Box>
             <SectionSkillsContainer>
@@ -260,9 +283,25 @@ export default function Home() {
               ))}
             </SectionSkillsContainer>
           </SectionSkills>
-        </MainContainer>
 
-        <FooterContainer id="contact">
+          <SectionMoments id="moments">
+            <Box marginTop={100} marginBottom={80}>
+              <Text tag="h3" color="blue-900" size="lg" weight="700">
+                Momentos
+              </Text>
+            </Box>
+            <SectionMomentsContainer>
+              <img src="/assets/images/moments/1.jpg" alt="" />
+              <img src="/assets/images/moments/2.jpg" alt="" />
+              <img src="/assets/images/moments/3.png" alt="" />
+              <img src="/assets/images/moments/4.jpg" alt="" />
+            </SectionMomentsContainer>
+          </SectionMoments>
+        </MainContainer>
+      </Container>
+
+      <FooterContainer id="contact">
+        <Container>
           <Box marginBottom={20}>
             <Text
               tag="strong"
@@ -314,8 +353,8 @@ export default function Home() {
               </a>
             </FooterSocials>
           </Box>
-        </FooterContainer>
-      </Container>
+        </Container>
+      </FooterContainer>
     </>
   );
 }

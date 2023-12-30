@@ -10,6 +10,7 @@ import { Box } from "@/components/wrappers/Box";
 import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { useState } from "react";
+import { ColorType } from "@/styles/theme";
 
 interface ISlide {
   name: string;
@@ -19,6 +20,11 @@ interface ISlide {
   imageWidth: number;
   imageHeight: number;
   images: Array<Array<string>>;
+  textColor?: ColorType;
+  titleColor?: ColorType;
+  bagedBg?: ColorType;
+  bagedBgActive?: ColorType;
+  emphasis?: boolean;
 }
 
 interface SliderProps {
@@ -45,7 +51,7 @@ export function Slider({ slide }: SliderProps) {
               tag="strong"
               size="lg2"
               weight="700"
-              color="white"
+              color={slide.titleColor ? slide.titleColor : "white"}
               fontFamily="secondary"
             >
               {slide.name}
@@ -56,7 +62,7 @@ export function Slider({ slide }: SliderProps) {
               tag="strong"
               size="sm"
               weight="400"
-              color="white"
+              color={slide.textColor ? slide.textColor : "white"}
               fontFamily="secondary"
             >
               {slide.description}
@@ -64,20 +70,29 @@ export function Slider({ slide }: SliderProps) {
           </Box>
           <SliderQuantityContainer>
             <SliderBagde
+              bgActive={slide.bagedBgActive}
+              bg={slide.bagedBg}
               active={selectedSlide === 0}
               onClick={() => setSelectedSlide(0)}
             />
             <SliderBagde
+              bgActive={slide.bagedBgActive}
+              bg={slide.bagedBg}
               active={selectedSlide === 1}
               onClick={() => setSelectedSlide(1)}
             />
             <SliderBagde
+              bgActive={slide.bagedBgActive}
+              bg={slide.bagedBg}
               active={selectedSlide === 2}
               onClick={() => setSelectedSlide(2)}
             />
           </SliderQuantityContainer>
           <Box marginTop={30}>
-            <Button variant="secondary" onClick={handleGoNextSlide}>
+            <Button
+              variant={slide.emphasis ? "tertiary" : "secondary"}
+              onClick={handleGoNextSlide}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="25"
@@ -87,7 +102,7 @@ export function Slider({ slide }: SliderProps) {
               >
                 <path
                   d="M9.40002 5.76917L15.4 12.7692L9.40002 19.7692"
-                  stroke="white"
+                  stroke={slide.emphasis ? "black" : "white"}
                   stroke-width="1.5"
                   stroke-linecap="round"
                   stroke-linejoin="round"
@@ -99,15 +114,14 @@ export function Slider({ slide }: SliderProps) {
       </SliderInfo>
       <SliderImages color={slide.secondaryColor}>
         {slide.images[selectedSlide].map((imageUrl, index) => (
-          <Image
-            key={slide.name + "image" + index}
-            width={slide.imageWidth}
-            height={slide.imageHeight}
-            src={imageUrl}
-            quality={100}
-            priority
-            alt=""
-          />
+          <div>
+            <img
+              width="100%"
+              key={slide.name + "image" + index}
+              src={imageUrl}
+              alt=""
+            />
+          </div>
         ))}
       </SliderImages>
     </SliderContainer>

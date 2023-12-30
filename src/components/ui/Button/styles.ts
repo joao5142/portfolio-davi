@@ -19,6 +19,15 @@ function getButtonStyle(variant: ButtonVariantTypes) {
       align-items: center;
       justify-content: center;
     `;
+  } else if (variant == "tertiary") {
+    return css`
+      background: #dce3fb;
+      padding: 1.25rem;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    `;
   }
 }
 

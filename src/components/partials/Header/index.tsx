@@ -5,14 +5,27 @@ import {
   HeaderContainer,
   HeaderNameText,
   HeaderNavList,
+  ListIcon,
+  CloseIcon,
 } from "./styles";
-
+import { List } from "phosphor-react";
+import { useRef, useState } from "react";
 export function Header() {
+  const navRef = useRef();
+
+  function handleToggleeNavMenu() {
+    if (navRef.current) {
+      navRef?.current.classList.toggle("show");
+    }
+  }
+
   return (
     <HeaderContainer>
       <HeaderContent>
         <HeaderNameText>Davi Guerra</HeaderNameText>
-        <HeaderNavList>
+
+        <HeaderNavList ref={navRef}>
+          <CloseIcon onClick={handleToggleeNavMenu} />
           <li>
             <a href="#projects">Projetos reais</a>
           </li>
@@ -24,6 +37,9 @@ export function Header() {
             <a href="#skills">Skills</a>
           </li>
           <li>
+            <a href="#moments">Momentos</a>
+          </li>
+          <li>
             <a href="#contact">Contato</a>
           </li>
           <li>
@@ -32,6 +48,7 @@ export function Header() {
             </a>
           </li>
         </HeaderNavList>
+        <ListIcon onClick={handleToggleeNavMenu} size={32} color="#84beff" />
       </HeaderContent>
     </HeaderContainer>
   );
