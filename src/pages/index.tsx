@@ -233,7 +233,7 @@ export default function Home() {
                   Boas soluções trazem boas experiências.
                 </Text>
               </Box>
-              <a href="/assets/curriculo.pdf" target="_blank">
+              <a href="/assets/curriculo_daviguerra.pdf" target="_blank">
                 <Button variant="primary">Sobre mim</Button>
               </a>
             </SectionHeroTitle>

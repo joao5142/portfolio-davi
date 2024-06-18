@@ -1,8 +1,13 @@
 import { List, X } from "phosphor-react";
 import styled from "styled-components";
 
-export const ListIcon = styled(List)``;
-export const CloseIcon = styled(X)``;
+export const ListIcon = styled(List)`
+  cursor: pointer;
+`;
+
+export const CloseIcon = styled(X)`
+  cursor: pointer;
+`;
 
 export const HeaderNavList = styled.ul`
   display: grid;
@@ -65,6 +70,7 @@ export const HeaderContent = styled.div`
       }
     }
     a {
+      font-size: 1.3rem;
       text-align: center;
     }
   }
@@ -72,6 +78,10 @@ export const HeaderContent = styled.div`
 export const HeaderContainer = styled.header`
   background: #fff;
   box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.03);
+
+  position: sticky;
+  top: 0;
+  left: 0;
 `;
 
 export const HeaderNameText = styled.span`

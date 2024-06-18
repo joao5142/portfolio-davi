@@ -25,25 +25,25 @@ export function Header() {
         <HeaderNameText>Davi Guerra</HeaderNameText>
 
         <HeaderNavList ref={navRef}>
-          <CloseIcon onClick={handleToggleeNavMenu} />
-          <li>
+          <CloseIcon onClick={handleToggleeNavMenu} size={28} />
+          <li onClick={handleToggleeNavMenu}>
             <a href="#projects">Projetos reais</a>
           </li>
-          <li>
+          <li onClick={handleToggleeNavMenu}>
             {" "}
             <a href="#habilities">Diferenciais</a>
           </li>
-          <li>
+          <li onClick={handleToggleeNavMenu}>
             <a href="#skills">Skills</a>
           </li>
-          <li>
+          <li onClick={handleToggleeNavMenu}>
             <a href="#moments">Momentos</a>
           </li>
-          <li>
+          <li onClick={handleToggleeNavMenu}>
             <a href="#contact">Contato</a>
           </li>
           <li>
-            <a href="/assets/curriculo.pdf" target="_blank">
+            <a href="/assets/curriculo_daviguerra.pdf" target="_blank">
               <Button variant="primary">Sobre mim</Button>
             </a>
           </li>
